@@ -1,1302 +1,723 @@
 html {
-  box-sizing: border-box;
-  font-size: 100%;
-  line-height: 1.15;
-  scroll-behavior: smooth;
-  width: 100%;
-  height: 100%;
+	box-sizing: border-box;
+	font-size: 100%;
+	line-height: 1.15;
+	scroll-behavior: smooth;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
-  line-height: 1.15;
-  color: var(--dl-color-black);
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: normal;
+	line-height: 1.15;
+	color: var(--dl-color-black);
+	background-color: var(--dl-color-bg);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
 }
 
 button:-moz-focus,
-[type="button"]:-moz-focus,
-[type="reset"]:-moz-focus,
-[type="submit"]:-moz-focus {
-  outline: 1px dotted ButtonText;
+[type='button']:-moz-focus,
+[type='reset']:-moz-focus,
+[type='submit']:-moz-focus {
+	outline: 1px dotted ButtonText;
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
+	color: inherit;
+	text-decoration: inherit;
 }
 
 input {
-  padding: 2px 4px;
+	padding: 2px 4px;
 }
 
 img {
-  display: block;
+	display: block;
+}
+
+.cangra-nav {
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	padding: 24px 64px;
+	position: fixed;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cangra-logo {
+	width: 110px;
+	height: 47px;
+	position: relative;
+	object-fit: cover;
+}
+
+.cangra-nav-items {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.cangra-nav-item {
+	color: white;
+	font-size: 1rem;
+}
+
+.cangra-nav-button {
+	display: flex;
+	padding: 10px 20px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	background-color: rgba(255, 215, 0, 1);
+}
+
+.cangra-nav-button__text {
+	color: var(--dl-color-cangra-blue700);
+	font-size: 1rem;
+	font-weight: 600;
 }
 
 .cangra-main {
-  position: relative;
+	position: relative;
 }
 
 .cangra-hero {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  gap: 1.5rem;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(
-    0deg,
-    rgba(73, 113, 255, 1) 0%,
-    rgba(65, 101, 229, 1) 34%,
-    rgba(56, 87, 198, 1) 67%,
-    rgba(41, 64, 145, 1) 100%
-  );
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	gap: 1.5rem;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(
+		0deg,
+		rgba(73, 113, 255, 1) 0%,
+		rgba(65, 101, 229, 1) 34%,
+		rgba(56, 87, 198, 1) 67%,
+		rgba(41, 64, 145, 1) 100%
+	);
 }
 
 .cangra-hero__text {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: center;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	align-items: flex-start;
+	flex-shrink: 1;
+	border-color: transparent;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .cangra-title {
-  color: white;
-  width: 614px;
-  height: auto;
-  margin-botton: 1rem;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 4rem;
+	color: white;
+	width: 614px;
+	height: auto;
+	margin-bottom: 1rem;
+	font-size: 3rem;
+	font-weight: bold;
+	line-height: 4rem;
 }
 
 .cangra-desc {
-  color: white;
-  width: 546px;
-  height: auto;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  line-height: 2.5rem;
+	color: white;
+	width: 546px;
+	height: auto;
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
+	line-height: 2.5rem;
 }
 
 .cangra-cta {
-  display: flex;
-  padding: 16px 32px;
-  align-items: center;
-  border-radius: 10px;
-  justify-content: center;
-  background-color: rgba(255, 215, 0, 1);
-  color: var(--dl-color-cangra-blue700);
-  font-weight: 600;
+	display: flex;
+	padding: 16px 32px;
+	align-items: center;
+	border-radius: 10px;
+	justify-content: center;
+	background-color: rgba(255, 215, 0, 1);
+	color: var(--dl-color-cangra-blue700);
+	font-weight: 600;
 }
 
 .cangra-hero__img {
-  width: 465px;
-  height: 370px;
-  object-fit: cover;
+	width: 465px;
+	height: 370px;
+	object-fit: cover;
 }
 
 .cangra-boxes {
-  bottom: 80px;
-  width: 100%;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
+	bottom: 80px;
+	width: 100%;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
 }
 
 .cangra-box {
-  margin-right: 1rem;
-  display: flex;
-  padding: 24px 16px;
-  position: relative;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  align-items: center;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 1);
+	display: flex;
+	padding: 24px 16px;
+	position: relative;
+	box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+	align-items: center;
+	border-radius: 10px;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
 }
 
 .cangra-box__icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 1rem;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 1rem;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
 }
 
 .cangra-box__rectangle {
-  width: 80px;
-  height: 80px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: rgba(255, 251, 230, 1);
+	width: 80px;
+	height: 80px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: rgba(255, 251, 230, 1);
 }
 
 .cangra-box__title {
-  margin-bottom: 1rem;
-  font-size: 16px;
+	margin-bottom: 1rem;
+	font-size: 16px;
 }
 
 .cangra-box__desc {
-  color: rgba(68, 68, 68, 1);
-  width: 326px;
-  height: auto;
-  font-size: 12px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 30px;
-  font-stretch: normal;
-  text-decoration: none;
+	color: rgba(68, 68, 68, 1);
+	width: 326px;
+	height: auto;
+	font-size: 12px;
+	align-self: auto;
+	font-style: normal;
+	text-align: center;
+	font-family: Inter;
+	font-weight: 400px;
+	line-height: 30px;
+	font-stretch: normal;
+	text-decoration: none;
 }
 
 .cangra-clients {
-  margin: 2.5rem 0 7.5rem 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  border-color: transparent;
-  flex-direction: column;
+	margin: 2.5rem 0 7.5rem 0;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border-color: transparent;
+	flex-direction: column;
 }
 
 .cangra-clients__title {
-  color: var(--dl-color-cangra-blue700);
-  height: auto;
-  margin: 0 0 40px 0;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+	color: var(--dl-color-cangra-blue700);
+	margin-bottom: 40px;
+	font-size: 2rem;
+	font-weight: 700;
 }
 
 .cangra-cards {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	align-items: center;
+	gap: 1rem;
 }
 
 .cangra-card {
-  margin: 0 16px 0 0;
-  display: flex;
-  padding: 24px 16px;
-  position: relative;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-radius: 20px;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 1);
+	display: flex;
+	padding: 24px 16px;
+	position: relative;
+	box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+	align-items: center;
+	border-radius: 20px;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
 }
 
 .cangra-card__img {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 1rem;
-  position: relative;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: transparent;
-  border-radius: 100px;
+	width: 64px;
+	height: 64px;
+	margin-bottom: 1rem;
+	position: relative;
+	box-sizing: border-box;
+	object-fit: cover;
+	border-color: transparent;
+	border-radius: 100px;
 }
 
 .cangra-card__profile {
-  margin-bottom: 1rem;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  flex-direction: column;
+	margin-bottom: 1rem;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	align-items: center;
+	flex-shrink: 1;
+	flex-direction: column;
 }
 
 .cangra-card__name {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 700;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+	font-weight: 700;
 }
 
 .cangra-card__company {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .cangra-card__desc {
-  width: 326px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 2rem;
-  font-stretch: normal;
-  text-decoration: none;
+	width: 326px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 2rem;
+	font-stretch: normal;
+	text-decoration: none;
 }
 
 .cangra-customers {
-  width: 100%;
-  height: 20rem;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-image: linear-gradient(
-    135deg,
-    rgba(73, 113, 255, 1) 0%,
-    rgba(65, 101, 229, 1) 34%,
-    rgba(56, 87, 198, 1) 67%,
-    rgba(41, 64, 145, 1) 100%
-  );
+	width: 100%;
+	height: 20rem;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(
+		135deg,
+		rgba(73, 113, 255, 1) 0%,
+		rgba(65, 101, 229, 1) 34%,
+		rgba(56, 87, 198, 1) 67%,
+		rgba(41, 64, 145, 1) 100%
+	);
 }
 
 .cangra-customers__title {
-  color: white;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  font-weight: 700;
+	color: white;
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	font-weight: 700;
 }
 
 .cangra-customers__box {
-  display: flex;
-  gap: 2rem;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  border-color: transparent;
+	display: flex;
+	gap: 2rem;
+	position: relative;
+	box-sizing: border-box;
+	align-items: flex-start;
+	border-color: transparent;
 }
 
 .cangra-customer {
-  width: 10rem;
-  height: 7rem;
-  display: flex;
-  padding: 12px 48px;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: white;
+	width: 10rem;
+	height: 7rem;
+	display: flex;
+	padding: 12px 48px;
+	box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: white;
 }
 
 .cangra-company {
-  width: 64px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+	width: 64px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .cangra-company__icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  border-color: transparent;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 10px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border-color: transparent;
 }
 
 .cangra-company__svg {
-  position: relative;
+	position: relative;
 }
 
 .cangra-company__name {
-  color: rgba(166, 166, 166, 1);
-  width: 64px;
-  height: auto;
-  font-size: 12px;
-  align-self: stretch;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: 15px;
-  font-stretch: normal;
-  text-decoration: none;
+	color: rgba(166, 166, 166, 1);
+	width: 64px;
+	height: auto;
+	font-size: 12px;
+	align-self: stretch;
+	font-style: normal;
+	text-align: center;
+	font-family: Inter;
+	font-weight: 500px;
+	line-height: 15px;
+	font-stretch: normal;
+	text-decoration: none;
 }
 
 .cangra-features {
-  width: 100%;
-  display: flex;
-  margin: 80px 0;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: center;
+	width: 100%;
+	display: flex;
+	margin: 80px 0;
+	box-sizing: border-box;
+	align-items: center;
+	border-color: transparent;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .cangra-features__title {
-  color: var(--dl-color-cangra-blue700);
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  font-weight: 700;
+	color: var(--dl-color-cangra-blue700);
+	margin-bottom: 40px;
+	font-size: 2.5rem;
+	font-weight: 700;
 }
 
 .cangra-features__img {
-  width: 965px;
-  height: 550px;
-  margin-bottom: 40px;
-  object-fit: cover;
-  border-radius: 20px;
+	width: 965px;
+	height: 550px;
+	margin-bottom: 40px;
+	object-fit: cover;
+	border-radius: 20px;
 }
 
 .cangra-feature__container {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
 .cangra-feature__col {
-  margin: 0 64px 0 0;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
+	margin: 0 64px 0 0;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	align-items: flex-start;
+	flex-shrink: 1;
+	border-color: transparent;
+	flex-direction: column;
 }
 
 .cangra-feature__icon {
-  margin: 0 0 24px 0;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
+	margin: 0 0 24px 0;
+	display: flex;
+	position: relative;
+	box-sizing: border-box;
+	align-items: center;
+	flex-shrink: 1;
+	border-color: transparent;
 }
 
 .cangra-feature__svg {
-  width: 32px;
-  height: 32px;
-  margin: 0 10px 0 0;
-  position: relative;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: transparent;
-}
-.cangra-feature__name {
-  font-size: 1.5rem;
-  font-weight: 600;
+	width: 32px;
+	height: 32px;
+	margin: 0 10px 0 0;
+	position: relative;
+	box-sizing: border-box;
+	object-fit: cover;
+	border-color: transparent;
 }
 
-.cangra-footer {
-  top: 3924px;
-  left: 0px;
-  width: 1200px;
-  height: 460px;
-  display: flex;
-  padding: 48px 0;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: flex-start;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: var(--dl-color-cangra-blue800);
-}
-.cangra-frame1621 {
-  display: flex;
-  padding: 0 48px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-}
-.cangra-cangra2 {
-  width: 129px;
-  height: 73px;
-  margin: 0 0 26px 0;
-  position: relative;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: transparent;
-}
-.cangra-text31 {
-  color: rgba(204, 204, 204, 1);
-  width: 413px;
-  height: auto;
-  margin: 0 0 26px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-frame1622 {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-}
-.cangra-col2 {
-  margin: 0 64px 0 0;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-}
-.cangra-text32 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 18px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text33 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text34 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text35 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text36 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text37 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-col3 {
-  margin: 0 64px 0 0;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-}
-.cangra-text38 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 18px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text39 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text40 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text41 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text42 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text43 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-col4 {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-}
-.cangra-text44 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 18px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text45 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text46 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text47 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text48 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  margin: 0 0 6px 0;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text49 {
-  color: rgba(204, 204, 204, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: 25px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-svg1 {
-  width: 1200;
-  height: 1px;
+.cangra-feature__name {
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 
 .cangra-packages {
-  top: 3000px;
-  left: 0px;
-  width: 1200px;
-  height: 608px;
-  display: flex;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: flex-start;
-  border-color: transparent;
-  background-image: linear-gradient(
-    0deg,
-    rgba(73, 113, 255, 1) 0%,
-    rgba(65, 101, 229, 1) 34%,
-    rgba(56, 87, 198, 1) 67%,
-    rgba(41, 64, 145, 1) 100%
-  );
+	width: 100%;
+	display: flex;
+	position: relative;
+	align-items: flex-start;
+	border-color: transparent;
+	background-image: linear-gradient(
+		0deg,
+		rgba(73, 113, 255, 1) 0%,
+		rgba(65, 101, 229, 1) 34%,
+		rgba(56, 87, 198, 1) 67%,
+		rgba(41, 64, 145, 1) 100%
+	);
 }
-.cangra-wave-cta1 {
-  top: 0px;
-  left: 0px;
-  width: 1200px;
-  height: 608px;
-  opacity: 1;
-  position: absolute;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: transparent;
+
+.cangra-packages__bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
 }
-.cangra-frame164 {
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  width: 1200px;
-  bottom: 0px;
-  margin: auto;
-  display: flex;
-  position: absolute;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: transparent;
-  justify-content: center;
+
+.cangra-packages__wrapper {
+	width: 100%;
+	padding: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.cangra-frame1641 {
-  margin: 0 68px 0 0;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
+
+.cangra-packages__hero {
+	margin-right: 5rem;
+	display: flex;
+	position: relative;
+	flex-direction: column;
 }
-.cangra-text50 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 0 8px 0;
-  font-size: 40px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages__title {
+	color: white;
+	margin-bottom: 0.5rem;
+	font-size: 2.5rem;
+	font-weight: 700;
 }
-.cangra-text51 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  opacity: 0.75;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages__desc {
+	color: white;
+	opacity: 0.75;
+	font-size: 1.5rem;
+	font-weight: 400;
 }
-.cangra-package-card {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: rgba(52, 80, 181, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 20px;
-  flex-direction: column;
+
+.cangra-packages-card {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+	border: 1px solid rgba(52, 80, 181, 1);
+	border-radius: 20px;
+	flex-direction: column;
 }
-.cangra-our-packages {
-  display: flex;
-  padding: 24px 16px;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--dl-color-cangra-blue700);
+
+.cangra-packages-card__header {
+	padding: 24px 16px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--dl-color-cangra-blue700);
 }
-.cangra-text52 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 0 16px 0;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages-card__title {
+	color: white;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
-.cangra-frame169 {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-color: transparent;
+
+.cangra-packages-card__buttons {
+	display: flex;
+	gap: 0.5rem;
+	position: relative;
+	align-items: center;
 }
-.cangra-frame165 {
-  margin: 0 9px 0 0;
-  display: flex;
-  padding: 8px 16px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-radius: 5px;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 1);
+
+.cangra-packages-card__button.active {
+	background-color: white;
 }
-.cangra-text53 {
-  color: var(--dl-color-cangra-blue700);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages-card__button__text.active {
+	color: var(--dl-color-cangra-blue700);
+	font-weight: 700;
 }
-.cangra-frame166 {
-  margin: 0 9px 0 0;
-  display: flex;
-  padding: 8px 16px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: rgba(255, 255, 255, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  justify-content: center;
+
+.cangra-packages-card__button {
+	display: flex;
+	padding: 8px 16px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid white;
+	border-radius: 5px;
 }
-.cangra-text54 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages-card__button__text {
+	color: white;
+	font-size: 14px;
 }
-.cangra-frame167 {
-  margin: 0 9px 0 0;
-  display: flex;
-  padding: 8px 16px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: rgba(255, 255, 255, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  justify-content: center;
+
+.cangra-packages-card__desc {
+	width: 100%;
+	display: flex;
+	padding: 24px 16px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
 }
-.cangra-text55 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-packages-card__desc__wrapper {
+	width: 100%;
+	margin-bottom: 1rem;
+	display: flex;
+	position: relative;
+	align-items: center;
+	flex-direction: column;
+	gap: 0.5rem;
 }
-.cangra-frame168 {
-  display: flex;
-  padding: 8px 16px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: rgba(255, 255, 255, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  justify-content: center;
+
+.cangra-packages-card__desc__text {
+	color: rgba(68, 68, 68, 1);
+	font-size: 1.25rem;
+	text-align: center;
+	line-height: 165%;
 }
-.cangra-text56 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  font-size: 14px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-cangra-packages-card__desc__separator {
+	width: 100%;
+	height: 1px;
 }
-.cangra-frame1623 {
-  width: 100%;
-  display: flex;
-  padding: 24px 16px;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #ffffff;
+
+.cangra-packages-card__desc__price {
+	color: var(--dl-color-cangra-blue700);
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 165%;
 }
-.cangra-frame1642 {
-  width: 100%;
-  margin: 0 0 16px 0;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  flex-direction: column;
-}
-.cangra-text57 {
-  color: rgba(68, 68, 68, 1);
-  height: auto;
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: 165.02273082733154%;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-svg2 {
-  width: 436;
-  height: 1px;
-  margin: 0 0 8px 0;
-}
-.cangra-text58 {
-  color: rgba(68, 68, 68, 1);
-  height: auto;
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: 165.02273082733154%;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-svg3 {
-  width: 436;
-  height: 1px;
-  margin: 0 0 8px 0;
-}
-.cangra-text59 {
-  color: rgba(68, 68, 68, 1);
-  height: auto;
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: 165.02273082733154%;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-svg4 {
-  width: 100%;
-  height: 1px;
-  margin: 0 0 8px 0;
-}
-.cangra-text60 {
-  color: rgba(68, 68, 68, 1);
-  height: auto;
-  font-size: 20px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: 165.02273082733154%;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cangra-text61 {
-  color: var(--dl-color-cangra-blue700);
-  width: 436px;
-  height: auto;
-  font-size: 32px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: 165.02273082733154%;
-  font-stretch: normal;
-  text-decoration: none;
-}
+
 .cangra-get-started {
-  top: 3608px;
-  left: 0px;
-  width: 1200px;
-  height: 316px;
-  display: flex;
-  padding: 100px 0;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: transparent;
-  justify-content: center;
+	display: flex;
+	padding: 100px 320px;
+	align-items: center;
+	justify-content: space-between;
 }
-.cangra-text62 {
-  color: var(--dl-color-cangra-blue700);
-  height: auto;
-  margin: 0 160px 0 0;
-  font-size: 48px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-get-started__text {
+	color: var(--dl-color-cangra-blue700);
+	font-size: 3rem;
+	font-weight: 700;
 }
-.cangra-c-t-a1 {
-  display: flex;
-  padding: 16px 32px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-radius: 10px;
-  justify-content: center;
-  background-color: rgba(255, 215, 0, 1);
+.cangra-get-started__cta {
+	display: flex;
+	padding: 16px 32px;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: rgba(255, 215, 0, 1);
 }
-.cangra-text66 {
-  color: var(--dl-color-cangra-blue700);
-  height: auto;
-  font-size: 24px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Montserrat;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-get-started {
+	color: var(--dl-color-cangra-blue700);
+	font-size: 1.5rem;
+	font-weight: 700;
 }
-.cangra-nav {
-  top: 0px;
-  left: 0px;
-  width: 1200px;
-  display: flex;
-  padding: 24px 64px;
-  position: absolute;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: transparent;
-  justify-content: space-between;
+
+.cangra-footer {
+	padding: 48px 0;
+	display: flex;
+	gap: 2.5rem;
+	position: relative;
+	flex-direction: column;
+	background-color: var(--dl-color-cangra-blue800);
 }
-.cangra-logo {
-  width: 110px;
-  height: 47px;
-  position: relative;
-  box-sizing: border-box;
-  object-fit: cover;
-  border-color: transparent;
+
+.cangra-footer__wrapper {
+	padding: 0 48px;
+	gap: 2rem;
+	display: flex;
+	position: relative;
+	align-items: flex-start;
+	flex-direction: column;
 }
-.cangra-nav1 {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  justify-content: center;
+
+.cangra-footer__logo {
+	position: relative;
+	object-fit: cover;
 }
-.cangra-text67 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 24px 0 0;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-footer__desc {
+	color: rgba(204, 204, 204, 1);
+	height: auto;
+	font-size: 14px;
+	align-self: auto;
+	font-style: normal;
+	text-align: left;
+	font-family: Inter;
+	font-weight: 400px;
+	line-height: normal;
+	font-stretch: normal;
+	text-decoration: none;
 }
-.cangra-text68 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 24px 0 0;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-footer__links {
+	display: flex;
+	position: relative;
 }
-.cangra-text69 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 24px 0 0;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+.cangra-footer__col {
+	margin-right: 4rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
-.cangra-text70 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 24px 0 0;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-footer__link.title {
+	color: white;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 25px;
 }
-.cangra-text71 {
-  color: rgba(255, 255, 255, 1);
-  height: auto;
-  margin: 0 24px 0 0;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: center;
-  font-family: Inter;
-  font-weight: 500px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-footer__link {
+	color: rgba(204, 204, 204, 1);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 25px;
+	font-stretch: normal;
+	text-decoration: none;
 }
-.cangra-contact-us {
-  display: flex;
-  padding: 10px 16px;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  flex-shrink: 1;
-  border-color: transparent;
-  border-radius: 8px;
-  justify-content: center;
-  background-color: rgba(255, 215, 0, 1);
-}
-.cangra-text72 {
-  color: var(--dl-color-cangra-blue700);
-  height: auto;
-  font-size: 16px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
+
+.cangra-footer__separator {
+	content: ' ';
+	width: 100%;
+	border-top: 1px solid rgba(204, 204, 204, 0.5);
+	height: 1px;
+	position: relative;
 }

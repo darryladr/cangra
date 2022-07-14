@@ -1,75 +1,15 @@
 :root {
-  --dl-color-black: #000000;
-  --dl-color-white: #ffffff;
-  --dl-color-cangra-blue50: rgba(237, 241, 255, 1);
-  --dl-color-cangra-blue100: rgba(199, 211, 255, 1);
-  --dl-color-cangra-blue200: rgba(171, 190, 255, 1);
-  --dl-color-cangra-blue300: rgba(133, 160, 255, 1);
-  --dl-color-cangra-blue400: rgba(109, 141, 255, 1);
-  --dl-color-cangra-blue500: rgba(73, 113, 255, 1);
-  --dl-color-cangra-blue600: rgba(66, 103, 232, 1);
-  --dl-color-cangra-blue700: rgba(52, 80, 181, 1);
-  --dl-color-cangra-blue800: rgba(40, 62, 140, 1);
-  --dl-color-cangra-blue900: rgba(31, 47, 107, 1);
-}
-
-.button {
-  color: var(--dl-color-black);
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-white);
-}
-
-.input {
-  color: var(--dl-color-black);
-  cursor: auto;
-  padding: 0.5rem 1rem;
-  border-color: var(--dl-color-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-white);
-}
-
-.textarea {
-  color: var(--dl-color-black);
-  cursor: auto;
-  padding: 0.5rem;
-  border-color: var(--dl-color-black);
-  border-width: 1px;
-  border-radius: 4px;
-  background-color: var(--dl-color-white);
-}
-
-.list {
-  width: 100%;
-  margin: 1em 0px 1em 0px;
-  display: block;
-  padding: 0px 0px 0px 1.5rem;
-  list-style-type: none;
-  list-style-position: outside;
-}
-
-.list-item {
-  display: list-item;
-}
-
-.heading {
-  font-size: 32px;
-  font-family: Inter;
-  font-weight: 700;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.content {
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 1.15;
-  text-transform: none;
-  text-decoration: none;
+	--dl-color-black: #000000;
+	--dl-color-white: #ffffff;
+	--dl-color-bg: #f9faff;
+	--dl-color-cangra-blue50: rgba(237, 241, 255, 1);
+	--dl-color-cangra-blue100: rgba(199, 211, 255, 1);
+	--dl-color-cangra-blue200: rgba(171, 190, 255, 1);
+	--dl-color-cangra-blue300: rgba(133, 160, 255, 1);
+	--dl-color-cangra-blue400: rgba(109, 141, 255, 1);
+	--dl-color-cangra-blue500: rgba(73, 113, 255, 1);
+	--dl-color-cangra-blue600: rgba(66, 103, 232, 1);
+	--dl-color-cangra-blue700: rgba(52, 80, 181, 1);
+	--dl-color-cangra-blue800: rgba(40, 62, 140, 1);
+	--dl-color-cangra-blue900: rgba(31, 47, 107, 1);
 }
