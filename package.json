@@ -1,10 +1,16 @@
 {
-  "name": "cangra",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "parcel-bundler": "^1.6.1"
-  },
-  "scripts": {},
-  "devDependencies": {}
+	"name": "cangra",
+	"version": "1.0.0",
+	"private": true,
+	"main": "index.js",
+	"dependencies": {},
+	"scripts": {
+		"dev": "rm -rf ./development && rm -rf ./.cache && sass --watch src/sass:development/sass & parcel src/index.html --dist-dir development -p 3000",
+		"build": "parcel build src/index.html --no-minify --dist-dir dist --public-url ./"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.6",
+		"parcel": "^2.6.2",
+		"sass": "^1.53.0"
+	}
 }

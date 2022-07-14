@@ -1,68 +1,12 @@
-html {
-	box-sizing: border-box;
-	font-size: 100%;
-	line-height: 1.15;
-	scroll-behavior: smooth;
-	width: 100%;
-	height: 100%;
+.cangra-main {
+	position: relative;
 }
 
-body {
-	font-family: 'Inter', Arial, Helvetica, sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	text-decoration: none;
-	text-transform: none;
-	letter-spacing: normal;
-	line-height: 1.15;
-	color: var(--dl-color-black);
-	background-color: var(--dl-color-bg);
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-	-webkit-appearance: button;
-}
-
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-button:-moz-focus,
-[type='button']:-moz-focus,
-[type='reset']:-moz-focus,
-[type='submit']:-moz-focus {
-	outline: 1px dotted ButtonText;
-}
-
-a {
-	color: inherit;
-	text-decoration: inherit;
-}
-
-input {
-	padding: 2px 4px;
-}
-
-img {
-	display: block;
+.cangra-logo {
+	width: 110px;
+	height: 47px;
+	position: relative;
+	object-fit: cover;
 }
 
 .cangra-nav {
@@ -74,46 +18,35 @@ img {
 	position: fixed;
 	align-items: center;
 	justify-content: space-between;
-}
 
-.cangra-logo {
-	width: 110px;
-	height: 47px;
-	position: relative;
-	object-fit: cover;
-}
+	&__items {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
 
-.cangra-nav-items {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
-}
+	&__item {
+		color: white;
+		font-size: 1rem;
+	}
 
-.cangra-nav-item {
-	color: white;
-	font-size: 1rem;
-}
+	&__button {
+		display: flex;
+		padding: 10px 20px;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		background-color: rgba(255, 215, 0, 1);
+	}
 
-.cangra-nav-button {
-	display: flex;
-	padding: 10px 20px;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	border-radius: 8px;
-	background-color: rgba(255, 215, 0, 1);
-}
-
-.cangra-nav-button__text {
-	color: var(--dl-color-cangra-blue700);
-	font-size: 1rem;
-	font-weight: 600;
-}
-
-.cangra-main {
-	position: relative;
+	&__button-text {
+		color: var(--dl-color-cangra-blue700);
+		font-size: 1rem;
+		font-weight: 600;
+	}
 }
 
 .cangra-hero {
@@ -131,53 +64,53 @@ img {
 		rgba(56, 87, 198, 1) 67%,
 		rgba(41, 64, 145, 1) 100%
 	);
-}
 
-.cangra-hero__text {
-	display: flex;
-	position: relative;
-	box-sizing: border-box;
-	align-items: flex-start;
-	flex-shrink: 1;
-	border-color: transparent;
-	flex-direction: column;
-	justify-content: center;
-}
+	&__text {
+		display: flex;
+		position: relative;
+		box-sizing: border-box;
+		align-items: flex-start;
+		flex-shrink: 1;
+		border-color: transparent;
+		flex-direction: column;
+		justify-content: center;
+	}
 
-.cangra-title {
-	color: white;
-	width: 614px;
-	height: auto;
-	margin-bottom: 1rem;
-	font-size: 3rem;
-	font-weight: bold;
-	line-height: 4rem;
-}
+	&__img {
+		width: 465px;
+		height: 370px;
+		object-fit: cover;
+	}
 
-.cangra-desc {
-	color: white;
-	width: 546px;
-	height: auto;
-	margin-bottom: 1rem;
-	font-size: 1.25rem;
-	line-height: 2.5rem;
-}
+	.cangra-title {
+		color: white;
+		width: 614px;
+		height: auto;
+		margin-bottom: 1rem;
+		font-size: 3rem;
+		font-weight: bold;
+		line-height: 4rem;
+	}
 
-.cangra-cta {
-	display: flex;
-	padding: 16px 32px;
-	align-items: center;
-	border-radius: 10px;
-	justify-content: center;
-	background-color: rgba(255, 215, 0, 1);
-	color: var(--dl-color-cangra-blue700);
-	font-weight: 600;
-}
+	.cangra-desc {
+		color: white;
+		width: 546px;
+		height: auto;
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+		line-height: 2.5rem;
+	}
 
-.cangra-hero__img {
-	width: 465px;
-	height: 370px;
-	object-fit: cover;
+	.cangra-cta {
+		display: flex;
+		padding: 16px 32px;
+		align-items: center;
+		border-radius: 10px;
+		justify-content: center;
+		background-color: rgba(255, 215, 0, 1);
+		color: var(--dl-color-cangra-blue700);
+		font-weight: 600;
+	}
 }
 
 .cangra-boxes {
