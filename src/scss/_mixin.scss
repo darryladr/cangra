@@ -1,0 +1,19 @@
+@mixin flex($align-items: null, $justify-content: null, $flex-direction: null, $gap: null) {
+	display: flex;
+	@if $flex-direction {
+		flex-direction: $flex-direction;
+	} @else {
+		flex-direction: row;
+	}
+	@if $align-items == default or $align-items == null {
+		align-items: stretch;
+	} @else {
+		align-items: $align-items;
+	}
+	@if $justify-content == default or $justify-content == null {
+		justify-content: flex-start;
+	} @else {
+		justify-content: $align-items;
+	}
+	gap: $gap;
+}
