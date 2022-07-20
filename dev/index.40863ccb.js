@@ -538,11 +538,19 @@ var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
 (0, _jqueryDefault.default)(function() {
     (0, _jqueryDefault.default)(document).on("scroll", function() {
         var nav = (0, _jqueryDefault.default)(".cangra-nav");
-        nav.toggleClass("scrolled", (0, _jqueryDefault.default)(this).scrollTop() > nav.height());
+        var scrollTop = (0, _jqueryDefault.default)(this).scrollTop();
+        var prev = 0;
+        nav.toggleClass("scrolled", scrollTop > 0);
+        prev = scrollTop;
     });
 });
 (0, _jqueryDefault.default)(function() {
-    (0, _jqueryDefault.default)("button").on("click", function() {
+    (0, _jqueryDefault.default)(".hamburger").on("click", function() {
+        (0, _jqueryDefault.default)(this).children().toggleClass("active");
+    });
+});
+(0, _jqueryDefault.default)(function() {
+    (0, _jqueryDefault.default)(".package-button").on("click", function() {
         (0, _jqueryDefault.default)("button").removeClass("active");
         (0, _jqueryDefault.default)(this).addClass("active");
     });

@@ -8,7 +8,7 @@
 		"jquery-ui": "^1.13.2"
 	},
 	"scripts": {
-		"dev": "rm -rf dev && rm -rf .parcel-cache && parcel src/index.html --dist-dir dev -p 3000",
+		"dev": "rm -rf dev && rm -rf .parcel-cache && parcel src/index.html --dist-dir dev",
 		"build": "parcel build src/index.html --dist-dir dist --public-url src"
 	},
 	"devDependencies": {

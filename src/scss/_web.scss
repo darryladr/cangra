@@ -2,9 +2,9 @@
 @use 'mixin' as *;
 @use 'breakpoints' as *;
 
-.cangra-main {
-	position: relative;
-}
+// .cangra-main {
+// 	position: relative;
+// }
 
 .cangra-nav {
 	@include flex(center, space-between);
@@ -13,6 +13,10 @@
 	width: 100%;
 	padding: 16px 64px;
 	z-index: 1;
+
+	@include sm {
+		padding: 16px 32px;
+	}
 
 	.logo {
 		position: relative;
@@ -28,23 +32,60 @@
 
 	&__items {
 		@include flex(center, center, row, 1rem);
-		position: relative;
+
+		@include sm {
+			display: none;
+		}
+
+		.item {
+			color: white;
+			font-size: 14px;
+		}
+
+		.button {
+			@include flex(center, center);
+			position: relative;
+			background-color: rgba(255, 215, 0, 1);
+			border-radius: 8px;
+			color: $cangra-blue-700;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 10px 20px;
+		}
 	}
 
-	&__item {
-		color: white;
-		font-size: 14px;
-	}
+	.hamburger {
+		cursor: pointer;
 
-	&__button {
-		@include flex(center, center);
-		position: relative;
-		background-color: rgba(255, 215, 0, 1);
-		border-radius: 8px;
-		color: $cangra-blue-700;
-		font-size: 14px;
-		font-weight: 500;
-		padding: 10px 20px;
+		> * {
+			width: 30px;
+			height: 3px;
+			background-color: white;
+			border-radius: 10px;
+			display: block;
+			margin: 6px 0;
+			-webkit-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.line1.active {
+			-webkit-transform: translateY(9px) rotate(45deg);
+			-ms-transform: translateY(9px) rotate(45deg);
+			-o-transform: translateY(9px) rotate(45deg);
+			transform: translateY(9px) rotate(45deg);
+		}
+
+		.line2.active {
+			opacity: 0;
+		}
+
+		.line3.active {
+			-webkit-transform: translateY(-9px) rotate(-45deg);
+			-ms-transform: translateY(-9px) rotate(-45deg);
+			-o-transform: translateY(-9px) rotate(-45deg);
+			transform: translateY(-9px) rotate(-45deg);
+		}
 	}
 }
 
@@ -53,11 +94,16 @@
 	@include md {
 		padding: 0 2rem;
 	}
+	@include sm {
+		padding: 0 2rem;
+		flex-direction: column;
+	}
 	position: relative;
 	width: 100%;
 	height: 100vh;
 	background: $gradient-top;
 	padding: 0 4rem;
+	overflow: hidden;
 
 	&__wrapper {
 		@include flex(flex-start, center, column);
@@ -65,9 +111,18 @@
 		max-width: 100%;
 		overflow: hidden;
 
+		@include sm {
+			align-items: center;
+			text-align: center;
+		}
+
 		.title {
 			@include md {
 				font-size: 2rem;
+				margin-bottom: 0.5rem;
+			}
+			@include landscape {
+				font-size: 1.5rem;
 				margin-bottom: 0.5rem;
 			}
 			color: white;
@@ -77,6 +132,19 @@
 			margin-bottom: 1rem;
 
 			max-width: 600px;
+
+			&--sm {
+				color: white;
+				font-size: 2.5rem;
+				font-weight: 700;
+				line-height: 2.5rem;
+				margin-bottom: 1rem;
+				display: none;
+
+				@include sm {
+					display: block;
+				}
+			}
 		}
 
 		.desc {
@@ -104,6 +172,7 @@
 			color: $cangra-blue-700;
 			font-weight: 500;
 			padding: 16px 32px;
+			z-index: 1;
 		}
 	}
 
@@ -112,9 +181,43 @@
 			height: 320px;
 		}
 
+		@include landscape {
+			height: 200px;
+		}
+
+		@include sm {
+			display: none;
+		}
+
 		height: 370px;
 		max-width: 100%;
 		object-fit: cover;
+	}
+
+	#cloud-left {
+		display: none;
+
+		@include sm {
+			display: block;
+			position: absolute;
+			max-width: 100%;
+			height: 120px;
+			left: -100;
+			bottom: 125;
+		}
+	}
+
+	#cloud-right {
+		display: none;
+
+		@include sm {
+			display: block;
+			position: absolute;
+			max-width: 100%;
+			height: 120px;
+			right: -160;
+			bottom: 230;
+		}
 	}
 }
 
@@ -123,6 +226,17 @@
 
 	@include md {
 		bottom: 90px;
+	}
+
+	@include sm {
+		bottom: auto;
+		flex-direction: column;
+		margin: 4rem 0;
+	}
+
+	@include landscape {
+		bottom: 0;
+		margin: 2rem 1.5rem 4rem 1.5rem;
 	}
 
 	position: relative;
@@ -203,7 +317,7 @@
 .cangra-clients {
 	@include flex(center, center, column);
 	position: relative;
-	margin: 2rem 0 7rem 0;
+	margin-bottom: 6rem;
 	max-width: 100%;
 
 	&__title {
@@ -211,15 +325,21 @@
 		font-size: 2rem;
 		font-weight: 700;
 		margin-bottom: 40px;
+
+		@include sm {
+			width: 70%;
+			text-align: center;
+		}
 	}
 
 	&__cards {
 		@include flex(center, center, row, 1rem);
-
-		@include md {
-			margin: 0 1.5rem;
-		}
 		position: relative;
+		margin: 0 1.5rem;
+
+		@include sm {
+			flex-direction: column;
+		}
 
 		.card {
 			@include flex(center, center, column);
@@ -293,7 +413,6 @@
 .cangra-customers {
 	@include flex(center, center, column);
 	position: relative;
-	height: 20rem;
 	background-image: linear-gradient(
 		135deg,
 		rgba(73, 113, 255, 1) 0%,
@@ -301,7 +420,7 @@
 		rgba(56, 87, 198, 1) 67%,
 		rgba(41, 64, 145, 1) 100%
 	);
-	max-width: 100%;
+	padding: 4rem 0;
 
 	&__title {
 		color: white;
@@ -312,15 +431,21 @@
 
 	&__wrapper {
 		@include flex(center, center, row, 2rem);
+
+		@include md {
+			flex: 1 1 auto;
+			margin: 0 1.5rem;
+		}
 		position: relative;
-		width: 100%;
+		flex-wrap: wrap;
+		max-width: 100%;
 
 		.company {
 			@include flex(center, center);
 
-			@include md {
-				padding: 12px 40px;
-			}
+			// @include md {
+			// 	padding: 12px 24px;
+			// }
 
 			height: 7rem;
 			background-color: white;
@@ -361,37 +486,49 @@
 .cangra-features {
 	@include flex(center, center, column);
 	width: 100%;
-	margin: 80px 0;
+	margin: 4rem 0;
 
 	&__title {
 		color: $cangra-blue-700;
 		font-size: 2.5rem;
 		font-weight: 700;
 		margin-bottom: 40px;
-	}
 
-	.hero {
-		max-width: 965px;
-		height: 550px;
-		border-radius: 20px;
-		margin-bottom: 40px;
-		object-fit: cover;
-
-		@include md {
-			height: 400px;
+		@include sm {
+			width: 70%;
+			text-align: center;
 		}
 	}
 
+	.hero {
+		@include md {
+			height: 400px;
+		}
+
+		@include sm {
+			height: 200px;
+			border-radius: 10px;
+		}
+		height: 550px;
+		border-radius: 20px;
+		margin-bottom: 40px;
+		max-width: 965px;
+		object-fit: cover;
+	}
+
 	.cangra-feature {
-		@include flex(center, center, default, 4rem);
-		position: relative;
+		@include flex(center, center, row, 4rem);
 
 		@include md {
 			gap: 2rem;
 		}
+		@include sm {
+			@include flex(default, center, column, 1.5rem);
+		}
+		position: relative;
 
 		.feature-col {
-			@include flex(flex-start, center, column, 24px);
+			@include flex(flex-start, center, column, 1.5rem);
 			position: relative;
 
 			.feature {
@@ -399,26 +536,31 @@
 				position: relative;
 
 				.checkmark {
+					@include md {
+						width: 24px;
+						height: 24px;
+					}
+					@include sm {
+						width: 20px;
+						height: 20px;
+					}
 					position: relative;
 					width: 32px;
 					height: 32px;
 					margin-right: 10px;
 					object-fit: cover;
-
-					@include md {
-						width: 24px;
-						height: 24px;
-					}
 				}
 			}
 
 			.feature-name {
-				font-size: 1.5rem;
-				font-weight: 600;
-
 				@include md {
 					font-size: 1.25rem;
 				}
+				@include sm {
+					font-size: 1rem;
+				}
+				font-size: 1.5rem;
+				font-weight: 600;
 			}
 		}
 	}
@@ -427,13 +569,13 @@
 .cangra-packages {
 	@include flex(center, center);
 	position: relative;
-	max-width: 100%;
 	background-image: linear-gradient(
 		180deg,
 		rgba(73, 113, 255, 1) 0%,
 		rgba(65, 101, 229, 1) 34%,
 		rgba(56, 87, 198, 1) 100%
 	);
+	max-width: 100%;
 
 	img {
 		position: absolute;
@@ -445,12 +587,27 @@
 	&__wrapper {
 		@include flex(center, center);
 		width: 100%;
-		padding: 4rem;
+		gap: 2rem;
+		padding: 3rem;
+
+		@include md {
+			flex-wrap: wrap;
+			flex: 1 1 auto;
+		}
+
+		@include sm {
+			flex-direction: column;
+		}
 
 		.header {
 			@include flex(default, default, column);
 			position: relative;
-			margin-right: 5rem;
+			@include md {
+				text-align: center;
+			}
+			@include sm {
+				text-align: center;
+			}
 
 			&__title {
 				color: white;
@@ -469,18 +626,24 @@
 	}
 
 	.card {
-		@include flex(default, default, column);
+		@include flex(center, center, column);
 		position: relative;
 		border: 1px solid rgba(52, 80, 181, 1);
 		border-radius: 20px;
 		box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+		flex-shrink: 0;
 		overflow: hidden;
+
+		@include sm {
+			width: 90%;
+		}
 
 		&__header {
 			@include flex(center, center, column);
 			position: relative;
+			width: 100%;
 			background-color: $cangra-blue-700;
-			padding: 24px 16px;
+			padding: 16px;
 
 			.title {
 				color: white;
@@ -493,7 +656,21 @@
 				@include flex(center, center, row, 0.5rem);
 				position: relative;
 
-				.button {
+				@include sm {
+					@include flex(default, default, row, 0.5rem);
+					overflow-x: scroll;
+					width: 90%;
+
+					&::-webkit-scrollbar {
+						display: none;
+					}
+
+					-ms-overflow-style: none;
+					overflow: -moz-scrollbars-none;
+					scrollbar-width: none;
+				}
+
+				.package-button {
 					@include flex(center, center);
 					position: relative;
 					background-color: transparent;
@@ -513,50 +690,65 @@
 		}
 
 		&__desc {
-			@include flex(center, center, column);
+			@include flex(center, center, column, 0.5rem);
 			position: relative;
 			width: 100%;
 			background-color: white;
-			padding: 24px 16px;
-		}
+			padding: 16px;
 
-		&__desc__wrapper {
-			@include flex(center, default, column, 0.5rem);
-			position: relative;
-			width: 100%;
-			margin-bottom: 1rem;
-		}
+			.wrapper {
+				@include flex(center, default, column, 0.5rem);
+				position: relative;
+				width: 100%;
+			}
 
-		&__desc__text {
-			color: rgba(68, 68, 68, 1);
-			font-size: 1.25rem;
-			line-height: 165%;
-			text-align: center;
-		}
+			.text {
+				color: rgba(68, 68, 68, 1);
+				font-size: 1.25rem;
+				line-height: 165%;
+				text-align: center;
+			}
 
-		.cangra-cangra-packages-card__desc__separator {
-			width: 100%;
-			height: 1px;
-		}
+			.separator {
+				width: 100%;
+				height: 1px;
+				background-color: rgba(68, 68, 68, 0.1);
+			}
 
-		&__desc__price {
-			color: $cangra-blue-700;
-			font-size: 2rem;
-			font-weight: 600;
-			line-height: 165%;
+			.price {
+				color: $cangra-blue-700;
+				font-size: 2rem;
+				font-weight: 600;
+				line-height: 165%;
+			}
 		}
 	}
 }
 
 .cangra-start {
-	@include flex(center, space-between);
+	@include flex(center, center, row, 3rem);
 	color: $cangra-blue-700;
-	padding: 100px 320px;
+	padding: 100px 0;
+	max-width: 100%;
+
+	@include md {
+		padding: 4rem 0;
+	}
+
+	@include sm {
+		width: 100%;
+		padding: 4rem 0;
+		@include flex(center, center, column, 2rem);
+	}
 
 	&__text {
 		color: $cangra-blue-700;
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 700;
+
+		@include sm {
+			text-align: center;
+		}
 	}
 
 	&__cta {
@@ -565,6 +757,7 @@
 		background-color: rgba(255, 215, 0, 1);
 		border-radius: 10px;
 		font-size: 1.5rem;
+		font-weight: 600;
 		padding: 16px 32px;
 	}
 }
@@ -592,25 +785,32 @@
 	}
 
 	&__links {
-		@include flex;
+		@include flex(default, default, row, 2rem);
 		position: relative;
+
+		@include sm {
+			flex-wrap: wrap;
+			flex: 1 1 auto;
+			gap: 2rem;
+		}
 	}
+
 	&__col {
 		@include flex(default, default, column, 0.5rem);
 		position: relative;
 		margin-right: 4rem;
-	}
 
-	&__link {
-		color: rgba(204, 204, 204, 1);
-		font-size: 14px;
-		line-height: 25px;
-
-		&.title {
-			color: white;
-			font-size: 18px;
-			font-weight: 600;
+		.link {
+			color: rgba(204, 204, 204, 1);
+			font-size: 14px;
 			line-height: 25px;
+
+			&.title {
+				color: white;
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 25px;
+			}
 		}
 	}
 
