@@ -1,12 +1,15 @@
-require("@babel/core").transform("code", {
-    presets: ["@babel/preset-env"],
-});
+import $ from 'jquery'
 
-import './sass/main.scss'
-import $ from 'jquery-ui'
+$(function () {
+    $(document).on("scroll", function () {
+        var nav = $(".cangra-nav")
+        nav.toggleClass("scrolled", $(this).scrollTop() > nav.height())
+    })
+})
 
-$(() => {
-    $("button").on("click", () => {
-        $("button").toggleClass("active")
+$(function () {
+    $("button").on("click", function () {
+        $("button").removeClass("active")
+        $(this).addClass("active")
     })
 })

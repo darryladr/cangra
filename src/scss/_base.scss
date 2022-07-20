@@ -11,12 +11,10 @@ html {
 }
 
 body {
-	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	font-family: $font-family;
 	font-weight: 400;
 	font-style: normal;
 	text-decoration: none;
-	text-transform: none;
-	letter-spacing: normal;
 	line-height: 1.15;
 	color: $black;
 	background-color: $cangra-blue-50;
@@ -31,6 +29,8 @@ body {
 button,
 select {
 	text-transform: none;
+	border: none;
+	cursor: pointer;
 }
 
 a {

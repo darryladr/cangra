@@ -1,34 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap";
 html {
   box-sizing: border-box;
-  font-size: 100%;
-  line-height: 1.15;
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
+  font-size: 100%;
+  line-height: 1.15;
 }
 
 body {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  color: #000;
+  background-color: #edf1ff;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
-  text-decoration: none;
+  font-weight: 400;
   line-height: 1.15;
-  color: #000000;
-  background-color: rgb(237, 241, 255);
+  text-decoration: none;
 }
 
 * {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
 }
 
-button,
-select {
+button, select {
   text-transform: none;
-  border: none;
   cursor: pointer;
+  border: none;
 }
 
 a {
@@ -49,611 +48,778 @@ img {
 }
 
 .cangra-nav {
+  width: 100%;
+  z-index: 1;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 16px 64px;
   display: flex;
   position: fixed;
-  width: 100%;
-  padding: 16px 64px;
-  z-index: 1;
 }
+
 .cangra-nav .logo {
-  position: relative;
   width: 110px;
   height: 47px;
   object-fit: cover;
+  position: relative;
 }
+
 .cangra-nav.scrolled {
-  background-color: rgb(41, 64, 145);
-  transition: all 0.3s linear;
+  background-color: #294091;
+  transition: all .3s linear;
 }
+
 .cangra-nav__items {
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  display: flex;
+  align-items: center;
   gap: 1rem;
+  display: flex;
   position: relative;
 }
+
 .cangra-nav__item {
-  color: white;
+  color: #fff;
   font-size: 14px;
 }
+
 .cangra-nav__button {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  position: relative;
-  background-color: rgb(255, 215, 0);
+  color: #3450b5;
+  background-color: gold;
   border-radius: 8px;
-  color: rgb(52, 80, 181);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  padding: 10px 20px;
+  display: flex;
+  position: relative;
 }
 
 .cangra-hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top, #4971ff, #4870fd 15.62%, #476ef9 29.98%, #456bf1 43.05%, #4267e8 54.81%, #3f61dc 65.26%, #3b5ccf 74.38%, #3756c2 82.13%, #3350b4 88.52%, #2f4aa7 93.52%, #2c459c 97.11%, #2a4194 99.27%, #294091);
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
   display: flex;
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to top, rgb(73, 113, 255), cubic-bezier(0.65, 0, 1, 1), rgb(41, 64, 145));
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-hero {
-    background: black;
+    padding: 0 2rem;
   }
 }
+
 .cangra-hero__wrapper {
+  max-width: 100%;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  align-items: flex-start;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
+
 .cangra-hero__wrapper .title {
-  width: 600px;
-  color: white;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  line-height: 2.5rem;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-hero__wrapper .title {
-    width: 500px;
+    margin-bottom: .5rem;
     font-size: 2rem;
-    margin-bottom: 0.5rem;
   }
 }
+
 .cangra-hero__wrapper .desc {
-  width: 540px;
-  height: auto;
-  color: white;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 2.5rem;
-  margin-bottom: 1rem;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-hero__wrapper .desc {
-    width: 490px;
     font-size: 1rem;
     line-height: 2rem;
   }
 }
+
 .cangra-hero__wrapper .cta {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background-color: rgb(255, 215, 0);
+  color: #3450b5;
+  background-color: gold;
   border-radius: 10px;
-  color: rgb(52, 80, 181);
-  font-weight: 500;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 16px 32px;
+  font-weight: 500;
+  display: flex;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-hero__wrapper .cta {
     font-size: 14px;
   }
 }
+
 .cangra-hero__img {
-  max-width: 100%;
   height: 370px;
+  max-width: 100%;
   object-fit: cover;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-hero__img {
-    height: 280px;
+    height: 320px;
   }
 }
 
 .cangra-boxes {
+  max-width: 100%;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  display: flex;
+  align-items: center;
   gap: 1rem;
-  position: relative;
-  bottom: 130px;
-  width: 100%;
-}
-.cangra-boxes .cangra-box {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: 0 1.5rem;
   display: flex;
   position: relative;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  padding: 24px 16px;
+  bottom: 120px;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
+  .cangra-boxes {
+    bottom: 90px;
+  }
+}
+
+.cangra-boxes .cangra-box {
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 10px 15px -3px #4971ff1a, 0 4px 6px -4px #4971ff1a;
+}
+
+@media only screen and (max-width: 991px) {
   .cangra-boxes .cangra-box {
     padding: 20px 10px;
   }
 }
+
 .cangra-boxes .cangra-box__icon {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
   width: 80px;
   height: 80px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
+  display: flex;
   overflow: hidden;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-boxes .cangra-box__icon {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: .75rem;
   }
 }
+
 .cangra-boxes .cangra-box__icon-bg {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  position: relative;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 251, 230);
+  background-color: #fffbe6;
   border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
 }
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 991px) {
   .cangra-boxes .cangra-box__icon-bg {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .cangra-boxes .cangra-box__icon-bg img {
+    width: 40px;
+    height: 40px;
   }
 }
+
 .cangra-boxes .cangra-box__title {
-  font-size: 16px;
   margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: 500;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-boxes .cangra-box__title {
+    margin-bottom: .75rem;
+  }
+}
+
 .cangra-boxes .cangra-box__desc {
-  width: 326px;
-  color: rgb(68, 68, 68);
-  font-size: 12px;
-  line-height: 30px;
+  color: #444;
+  max-width: 326px;
   text-align: center;
+  font-size: 12px;
+  line-height: 2rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .cangra-boxes .cangra-box__desc {
+    line-height: 1.5rem;
+  }
 }
 
 .cangra-clients {
+  max-width: 100%;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin: 2rem 0 7rem;
   display: flex;
   position: relative;
-  border-color: transparent;
-  margin: 2rem 0 7rem 0;
 }
+
 .cangra-clients__title {
-  color: rgb(52, 80, 181);
+  color: #3450b5;
+  margin-bottom: 40px;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 40px;
 }
+
 .cangra-clients__cards {
-  flex-direction: "";
-  align-items: center;
-  justify-content: "";
-  display: flex;
-  gap: 1rem;
-  position: relative;
-  box-sizing: border-box;
-}
-.cangra-clients__cards .card {
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
   display: flex;
   position: relative;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  padding: 24px 16px;
 }
-.cangra-clients__cards .card img {
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards {
+    margin: 0 1.5rem;
+  }
+}
+
+.cangra-clients__cards .card {
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  display: flex;
   position: relative;
+  box-shadow: 0 10px 15px -3px #4971ff1a, 0 4px 6px -4px #4971ff1a;
+}
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card {
+    padding: 20px 10px;
+  }
+}
+
+.cangra-clients__cards .card img {
   width: 64px;
   height: 64px;
-  border-color: transparent;
-  border-radius: 100px;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
   object-fit: cover;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  position: relative;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: .75rem;
+  }
+}
+
 .cangra-clients__cards .card__profile {
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
   display: flex;
   position: relative;
-  flex-shrink: 1;
-  margin-bottom: 0.5rem;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card__profile {
+    margin-bottom: .75rem;
+  }
+}
+
 .cangra-clients__cards .card__profile .name {
+  margin-bottom: .5rem;
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card__profile .name {
+    margin-bottom: .25rem;
+    font-size: 14px;
+  }
+}
+
 .cangra-clients__cards .card__profile .company {
   font-size: 14px;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card__profile .company {
+    font-size: 12px;
+  }
+}
+
 .cangra-clients__cards .card__desc {
-  width: 326px;
-  font-size: 12px;
-  font-stretch: normal;
-  line-height: 2rem;
+  max-width: 326px;
   text-align: center;
-  text-decoration: none;
+  font-size: 12px;
+  line-height: 2rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .cangra-clients__cards .card__desc {
+    line-height: 1.5rem;
+  }
 }
 
 .cangra-customers {
+  height: 20rem;
+  max-width: 100%;
+  background-image: linear-gradient(135deg, #4971ff 0%, #4165e5 34%, #3857c6 67%, #294091 100%);
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   display: flex;
   position: relative;
-  width: 100%;
-  height: 20rem;
-  background-image: linear-gradient(135deg, rgb(73, 113, 255) 0%, rgb(65, 101, 229) 34%, rgb(56, 87, 198) 67%, rgb(41, 64, 145) 100%);
 }
+
 .cangra-customers__title {
-  color: white;
+  color: #fff;
+  margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
 }
+
 .cangra-customers__wrapper {
-  flex-direction: "";
-  align-items: flex-start;
-  justify-content: "";
-  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+  display: flex;
   position: relative;
 }
+
 .cangra-customers__wrapper .company {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 10rem;
   height: 7rem;
-  background-color: white;
+  max-width: 10rem;
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  padding: 12px 48px;
-}
-.cangra-customers__wrapper .company__wrapper {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 64px;
-}
-.cangra-customers__wrapper .company__wrapper .icon {
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 12px 48px;
   display: flex;
-  position: relative;
+  box-shadow: 0 10px 15px -3px #4971ff1a, 0 4px 6px -4px #4971ff1a;
+}
+
+@media only screen and (max-width: 991px) {
+  .cangra-customers__wrapper .company {
+    padding: 12px 40px;
+  }
+}
+
+.cangra-customers__wrapper .company__wrapper {
+  width: 64px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.cangra-customers__wrapper .company__wrapper .icon {
   width: 40px;
   height: 40px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
+  display: flex;
+  position: relative;
 }
+
 .cangra-customers__wrapper .company__wrapper .icon img {
   position: relative;
 }
+
 .cangra-customers__wrapper .company__wrapper .name {
   width: 64px;
-  color: rgb(166, 166, 166);
+  color: #a6a6a6;
+  text-align: center;
   font-size: 12px;
   font-weight: 500;
   line-height: 15px;
-  text-align: center;
 }
 
 .cangra-features {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: flex;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 80px 0;
+  display: flex;
 }
+
 .cangra-features__title {
-  color: rgb(52, 80, 181);
+  color: #3450b5;
+  margin-bottom: 40px;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
 }
-.cangra-features img {
-  width: 965px;
+
+.cangra-features .hero {
+  max-width: 965px;
   height: 550px;
+  object-fit: cover;
   border-radius: 20px;
   margin-bottom: 40px;
-  object-fit: cover;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-features .hero {
+    height: 400px;
+  }
+}
+
 .cangra-features .cangra-feature {
-  flex-direction: row;
-  align-items: center;
+  flex-direction: default;
   justify-content: center;
+  align-items: center;
+  gap: 4rem;
   display: flex;
   position: relative;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-features .cangra-feature {
+    gap: 2rem;
+  }
+}
+
 .cangra-features .cangra-feature .feature-col {
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
-  justify-content: flex-start;
-  display: flex;
   gap: 24px;
+  display: flex;
   position: relative;
-  margin-right: 4rem;
 }
+
 .cangra-features .cangra-feature .feature-col .feature {
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   display: flex;
   position: relative;
 }
-.cangra-features .cangra-feature .feature-col .feature img {
-  position: relative;
+
+.cangra-features .cangra-feature .feature-col .feature .checkmark {
   width: 32px;
   height: 32px;
-  border-color: transparent;
-  box-sizing: border-box;
-  margin: 0 10px 0 0;
   object-fit: cover;
+  margin-right: 10px;
+  position: relative;
 }
+
+@media only screen and (max-width: 991px) {
+  .cangra-features .cangra-feature .feature-col .feature .checkmark {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .cangra-features .cangra-feature .feature-col .feature-name {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
+@media only screen and (max-width: 991px) {
+  .cangra-features .cangra-feature .feature-col .feature-name {
+    font-size: 1.25rem;
+  }
+}
+
 .cangra-packages {
+  max-width: 100%;
+  background-image: linear-gradient(#4971ff 0%, #4165e5 34%, #3857c6 100%);
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   display: flex;
   position: relative;
-  width: 100%;
-  background-image: linear-gradient(0deg, rgb(73, 113, 255) 0%, rgb(65, 101, 229) 34%, rgb(56, 87, 198) 67%, rgb(41, 64, 145) 100%);
 }
+
 .cangra-packages img {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
 }
+
 .cangra-packages__wrapper {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
   width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 4rem;
+  display: flex;
 }
+
 .cangra-packages__wrapper .header {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
+  margin-right: 5rem;
   display: flex;
   position: relative;
-  margin-right: 5rem;
 }
+
 .cangra-packages__wrapper .header__title {
-  color: white;
+  color: #fff;
+  margin-bottom: .5rem;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
 }
+
 .cangra-packages__wrapper .header__desc {
-  color: white;
+  color: #fff;
+  opacity: .75;
   font-size: 1.5rem;
   font-weight: 400;
-  opacity: 0.75;
 }
+
 .cangra-packages .card {
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  display: flex;
-  position: relative;
-  border: 1px solid rgb(52, 80, 181);
+  border: 1px solid #3450b5;
   border-radius: 20px;
-  box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
-  overflow: hidden;
-}
-.cangra-packages .card__header {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: stretch;
   display: flex;
   position: relative;
-  background-color: rgb(52, 80, 181);
-  padding: 24px 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px #4971ff1a, 0 4px 6px -4px #4971ff1a;
 }
+
+.cangra-packages .card__header {
+  background-color: #3450b5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  display: flex;
+  position: relative;
+}
+
 .cangra-packages .card__header .title {
-  color: white;
+  color: #fff;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
+
 .cangra-packages .card__header .buttons {
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: .5rem;
   display: flex;
-  gap: 0.5rem;
   position: relative;
 }
+
 .cangra-packages .card__header .buttons .button {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  position: relative;
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
-  color: white;
+  color: #fff;
   cursor: pointer;
-  font-size: 14px;
-  padding: 8px 16px;
-}
-.cangra-packages .card__header .buttons .button.active {
-  background-color: white;
-  color: rgb(52, 80, 181);
-}
-.cangra-packages .card__desc {
-  flex-direction: column;
-  align-items: center;
+  background-color: #0000;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  flex-direction: row;
   justify-content: center;
-  display: flex;
-  position: relative;
-  width: 100%;
-  background-color: white;
-  padding: 24px 16px;
-}
-.cangra-packages .card__desc__wrapper {
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  padding: 8px 16px;
+  font-size: 14px;
   display: flex;
-  gap: 0.5rem;
   position: relative;
-  width: 100%;
-  margin-bottom: 1rem;
 }
+
+.cangra-packages .card__header .buttons .button.active {
+  color: #3450b5;
+  background-color: #fff;
+}
+
+.cangra-packages .card__desc {
+  width: 100%;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  display: flex;
+  position: relative;
+}
+
+.cangra-packages .card__desc__wrapper {
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  position: relative;
+}
+
 .cangra-packages .card__desc__text {
-  color: rgb(68, 68, 68);
+  color: #444;
+  text-align: center;
   font-size: 1.25rem;
   line-height: 165%;
-  text-align: center;
 }
+
 .cangra-packages .card .cangra-cangra-packages-card__desc__separator {
   width: 100%;
   height: 1px;
 }
+
 .cangra-packages .card__desc__price {
-  color: rgb(52, 80, 181);
+  color: #3450b5;
   font-size: 2rem;
   font-weight: 600;
   line-height: 165%;
 }
 
 .cangra-start {
+  color: #3450b5;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  display: flex;
+  align-items: center;
   padding: 100px 320px;
-  color: rgb(52, 80, 181);
+  display: flex;
 }
+
 .cangra-start__text {
-  color: rgb(52, 80, 181);
+  color: #3450b5;
   font-size: 3rem;
   font-weight: 700;
 }
+
 .cangra-start__cta {
+  background-color: gold;
+  border-radius: 10px;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  font-size: 1.5rem;
   display: flex;
   position: relative;
-  background-color: rgb(255, 215, 0);
-  font-size: 1.5rem;
-  border-radius: 10px;
-  padding: 16px 32px;
 }
 
 .cangra-footer {
+  background-color: #283e8c;
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
-  display: flex;
+  align-items: stretch;
   gap: 2.5rem;
-  position: relative;
-  background-color: rgb(40, 62, 140);
   padding: 48px 0;
+  display: flex;
+  position: relative;
 }
+
 .cangra-footer__wrapper {
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
-  display: flex;
+  align-items: flex-start;
   gap: 2rem;
-  position: relative;
   padding: 0 48px;
-}
-.cangra-footer__logo {
+  display: flex;
   position: relative;
-  object-fit: cover;
 }
+
+.cangra-footer__logo {
+  object-fit: cover;
+  position: relative;
+}
+
 .cangra-footer__desc {
-  color: rgb(204, 204, 204);
+  color: #ccc;
   font-size: 14px;
 }
+
 .cangra-footer__links {
   flex-direction: row;
-  align-items: stretch;
   justify-content: flex-start;
+  align-items: stretch;
   display: flex;
   position: relative;
 }
+
 .cangra-footer__col {
   flex-direction: column;
-  align-items: stretch;
   justify-content: flex-start;
-  display: flex;
-  gap: 0.5rem;
-  position: relative;
+  align-items: stretch;
+  gap: .5rem;
   margin-right: 4rem;
+  display: flex;
+  position: relative;
 }
+
 .cangra-footer__link {
-  color: rgb(204, 204, 204);
+  color: #ccc;
   font-size: 14px;
   line-height: 25px;
 }
+
 .cangra-footer__link.title {
-  color: white;
+  color: #fff;
   font-size: 18px;
   font-weight: 600;
   line-height: 25px;
 }
+
 .cangra-footer__separator {
-  position: relative;
   width: 100%;
   height: 1px;
-  border-top: 1px solid rgba(204, 204, 204, 0.5);
   content: " ";
+  border-top: 1px solid #cccccc80;
+  position: relative;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=index.9566755f.css.map */

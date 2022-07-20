@@ -1,5 +1,4 @@
 @mixin flex($align-items: null, $justify-content: null, $flex-direction: null, $gap: null) {
-	display: flex;
 	@if $flex-direction {
 		flex-direction: $flex-direction;
 	} @else {
@@ -13,7 +12,8 @@
 	@if $justify-content == default or $justify-content == null {
 		justify-content: flex-start;
 	} @else {
-		justify-content: $align-items;
+		justify-content: $justify-content;
 	}
+	display: flex;
 	gap: $gap;
 }

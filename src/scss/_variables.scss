@@ -1,3 +1,11 @@
+// Base
+$font-family: 'Inter', Arial, Helvetica, sans-serif;
+
+// Breakpoints
+$mobile-width: 576px;
+$tablet-width: 1100px;
+
+// Color
 $black: #000000;
 $white: #ffffff;
 $cangra-blue-50: rgba(237, 241, 255, 1);
@@ -10,3 +18,17 @@ $cangra-blue-600: rgba(66, 103, 232, 1);
 $cangra-blue-700: rgba(52, 80, 181, 1);
 $cangra-blue-800: rgba(40, 62, 140, 1);
 $cangra-blue-900: rgba(31, 47, 107, 1);
+$cangra-nav: rgba(41, 64, 145, 1);
+
+$gradient-top: linear-gradient(
+	to top,
+	rgba(73, 113, 255, 1),
+	cubic-bezier(0.65, 0, 1, 1),
+	rgba(41, 64, 145, 1)
+);
+$gradient-right: linear-gradient(
+	to right,
+	rgba(73, 113, 255, 1),
+	cubic-bezier(0.65, 0, 1, 1),
+	rgba(41, 64, 145, 1)
+);

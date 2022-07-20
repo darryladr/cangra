@@ -1,0 +1,624 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+@use 'breakpoints' as *;
+
+.cangra-main {
+	position: relative;
+}
+
+.cangra-nav {
+	@include flex(center, space-between);
+	$c: &;
+	position: fixed;
+	width: 100%;
+	padding: 16px 64px;
+	z-index: 1;
+
+	.logo {
+		position: relative;
+		width: 110px;
+		height: 47px;
+		object-fit: cover;
+	}
+
+	&.scrolled {
+		background-color: $cangra-nav;
+		transition: all 0.3s linear;
+	}
+
+	&__items {
+		@include flex(center, center, row, 1rem);
+		position: relative;
+	}
+
+	&__item {
+		color: white;
+		font-size: 14px;
+	}
+
+	&__button {
+		@include flex(center, center);
+		position: relative;
+		background-color: rgba(255, 215, 0, 1);
+		border-radius: 8px;
+		color: $cangra-blue-700;
+		font-size: 14px;
+		font-weight: 500;
+		padding: 10px 20px;
+	}
+}
+
+.cangra-hero {
+	@include flex(center, center, row);
+	@include md {
+		padding: 0 2rem;
+	}
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: $gradient-top;
+	padding: 0 4rem;
+
+	&__wrapper {
+		@include flex(flex-start, center, column);
+		position: relative;
+		max-width: 100%;
+		overflow: hidden;
+
+		.title {
+			@include md {
+				font-size: 2rem;
+				margin-bottom: 0.5rem;
+			}
+			color: white;
+			font-size: 2.5rem;
+			font-weight: 700;
+			line-height: 2.5rem;
+			margin-bottom: 1rem;
+
+			max-width: 600px;
+		}
+
+		.desc {
+			@include md {
+				font-size: 1rem;
+				line-height: 2rem;
+			}
+			color: white;
+			font-size: 1.25rem;
+			line-height: 2.5rem;
+			margin-bottom: 1rem;
+
+			max-width: 600px;
+		}
+
+		.cta {
+			@include flex(center, center);
+
+			@include md {
+				font-size: 14px;
+			}
+
+			background-color: rgba(255, 215, 0, 1);
+			border-radius: 10px;
+			color: $cangra-blue-700;
+			font-weight: 500;
+			padding: 16px 32px;
+		}
+	}
+
+	&__img {
+		@include md {
+			height: 320px;
+		}
+
+		height: 370px;
+		max-width: 100%;
+		object-fit: cover;
+	}
+}
+
+.cangra-boxes {
+	@include flex(center, center, row, 1rem);
+
+	@include md {
+		bottom: 90px;
+	}
+
+	position: relative;
+	bottom: 120px;
+	margin: 0 1.5rem;
+	max-width: 100%;
+
+	.cangra-box {
+		@include flex(center, center, column);
+
+		@include md {
+			padding: 20px 10px;
+		}
+		position: relative;
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+		padding: 24px 16px;
+
+		&__icon {
+			@include flex(center, center);
+
+			@include md {
+				width: 60px;
+				height: 60px;
+				margin-bottom: 0.75rem;
+			}
+
+			width: 80px;
+			height: 80px;
+			margin-bottom: 1rem;
+			overflow: hidden;
+
+			&-bg {
+				@include flex(center, center, column);
+
+				@include md {
+					width: 60px;
+					height: 60px;
+				}
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(255, 251, 230, 1);
+				border-radius: 10px;
+
+				img {
+					@include md {
+						width: 40px;
+						height: 40px;
+					}
+				}
+			}
+		}
+
+		&__title {
+			@include md {
+				margin-bottom: 0.75rem;
+			}
+			font-size: 16px;
+			font-weight: 500;
+			margin-bottom: 1rem;
+		}
+
+		&__desc {
+			@include md {
+				line-height: 1.5rem;
+			}
+			color: rgba(68, 68, 68, 1);
+			font-size: 12px;
+			line-height: 2rem;
+			max-width: 326px;
+			text-align: center;
+		}
+	}
+}
+
+.cangra-clients {
+	@include flex(center, center, column);
+	position: relative;
+	margin: 2rem 0 7rem 0;
+	max-width: 100%;
+
+	&__title {
+		color: $cangra-blue-700;
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 40px;
+	}
+
+	&__cards {
+		@include flex(center, center, row, 1rem);
+
+		@include md {
+			margin: 0 1.5rem;
+		}
+		position: relative;
+
+		.card {
+			@include flex(center, center, column);
+
+			@include md {
+				padding: 20px 10px;
+			}
+
+			position: relative;
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+			padding: 24px 16px;
+
+			img {
+				@include md {
+					width: 48px;
+					height: 48px;
+					margin-bottom: 0.75rem;
+				}
+
+				position: relative;
+				width: 64px;
+				height: 64px;
+				border-radius: 100px;
+				margin-bottom: 1rem;
+				object-fit: cover;
+			}
+
+			&__profile {
+				@include flex(center, default, column);
+
+				@include md {
+					margin-bottom: 0.75rem;
+				}
+
+				position: relative;
+				margin-bottom: 1rem;
+
+				.name {
+					@include md {
+						font-size: 14px;
+						margin-bottom: 0.25rem;
+					}
+					font-size: 1rem;
+					font-weight: 700;
+					margin-bottom: 0.5rem;
+				}
+
+				.company {
+					@include md {
+						font-size: 12px;
+					}
+					font-size: 14px;
+				}
+			}
+
+			&__desc {
+				@include md {
+					line-height: 1.5rem;
+				}
+				font-size: 12px;
+				line-height: 2rem;
+				max-width: 326px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.cangra-customers {
+	@include flex(center, center, column);
+	position: relative;
+	height: 20rem;
+	background-image: linear-gradient(
+		135deg,
+		rgba(73, 113, 255, 1) 0%,
+		rgba(65, 101, 229, 1) 34%,
+		rgba(56, 87, 198, 1) 67%,
+		rgba(41, 64, 145, 1) 100%
+	);
+	max-width: 100%;
+
+	&__title {
+		color: white;
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 2rem;
+	}
+
+	&__wrapper {
+		@include flex(center, center, row, 2rem);
+		position: relative;
+		width: 100%;
+
+		.company {
+			@include flex(center, center);
+
+			@include md {
+				padding: 12px 40px;
+			}
+
+			height: 7rem;
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+			max-width: 10rem;
+			padding: 12px 48px;
+
+			&__wrapper {
+				@include flex(center, center, column);
+				width: 64px;
+
+				.icon {
+					@include flex(center, center);
+					position: relative;
+					width: 40px;
+					height: 40px;
+					margin-bottom: 10px;
+
+					img {
+						position: relative;
+					}
+				}
+
+				.name {
+					width: 64px;
+					color: rgba(166, 166, 166, 1);
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 15px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.cangra-features {
+	@include flex(center, center, column);
+	width: 100%;
+	margin: 80px 0;
+
+	&__title {
+		color: $cangra-blue-700;
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 40px;
+	}
+
+	.hero {
+		max-width: 965px;
+		height: 550px;
+		border-radius: 20px;
+		margin-bottom: 40px;
+		object-fit: cover;
+
+		@include md {
+			height: 400px;
+		}
+	}
+
+	.cangra-feature {
+		@include flex(center, center, default, 4rem);
+		position: relative;
+
+		@include md {
+			gap: 2rem;
+		}
+
+		.feature-col {
+			@include flex(flex-start, center, column, 24px);
+			position: relative;
+
+			.feature {
+				@include flex(center, center);
+				position: relative;
+
+				.checkmark {
+					position: relative;
+					width: 32px;
+					height: 32px;
+					margin-right: 10px;
+					object-fit: cover;
+
+					@include md {
+						width: 24px;
+						height: 24px;
+					}
+				}
+			}
+
+			.feature-name {
+				font-size: 1.5rem;
+				font-weight: 600;
+
+				@include md {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+}
+
+.cangra-packages {
+	@include flex(center, center);
+	position: relative;
+	max-width: 100%;
+	background-image: linear-gradient(
+		180deg,
+		rgba(73, 113, 255, 1) 0%,
+		rgba(65, 101, 229, 1) 34%,
+		rgba(56, 87, 198, 1) 100%
+	);
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__wrapper {
+		@include flex(center, center);
+		width: 100%;
+		padding: 4rem;
+
+		.header {
+			@include flex(default, default, column);
+			position: relative;
+			margin-right: 5rem;
+
+			&__title {
+				color: white;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 0.5rem;
+			}
+
+			&__desc {
+				color: white;
+				font-size: 1.5rem;
+				font-weight: 400;
+				opacity: 0.75;
+			}
+		}
+	}
+
+	.card {
+		@include flex(default, default, column);
+		position: relative;
+		border: 1px solid rgba(52, 80, 181, 1);
+		border-radius: 20px;
+		box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+		overflow: hidden;
+
+		&__header {
+			@include flex(center, center, column);
+			position: relative;
+			background-color: $cangra-blue-700;
+			padding: 24px 16px;
+
+			.title {
+				color: white;
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			.buttons {
+				@include flex(center, center, row, 0.5rem);
+				position: relative;
+
+				.button {
+					@include flex(center, center);
+					position: relative;
+					background-color: transparent;
+					border: 1px solid white;
+					border-radius: 5px;
+					color: white;
+					cursor: pointer;
+					font-size: 14px;
+					padding: 8px 16px;
+
+					&.active {
+						background-color: white;
+						color: $cangra-blue-700;
+					}
+				}
+			}
+		}
+
+		&__desc {
+			@include flex(center, center, column);
+			position: relative;
+			width: 100%;
+			background-color: white;
+			padding: 24px 16px;
+		}
+
+		&__desc__wrapper {
+			@include flex(center, default, column, 0.5rem);
+			position: relative;
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		&__desc__text {
+			color: rgba(68, 68, 68, 1);
+			font-size: 1.25rem;
+			line-height: 165%;
+			text-align: center;
+		}
+
+		.cangra-cangra-packages-card__desc__separator {
+			width: 100%;
+			height: 1px;
+		}
+
+		&__desc__price {
+			color: $cangra-blue-700;
+			font-size: 2rem;
+			font-weight: 600;
+			line-height: 165%;
+		}
+	}
+}
+
+.cangra-start {
+	@include flex(center, space-between);
+	color: $cangra-blue-700;
+	padding: 100px 320px;
+
+	&__text {
+		color: $cangra-blue-700;
+		font-size: 3rem;
+		font-weight: 700;
+	}
+
+	&__cta {
+		@include flex(center, center);
+		position: relative;
+		background-color: rgba(255, 215, 0, 1);
+		border-radius: 10px;
+		font-size: 1.5rem;
+		padding: 16px 32px;
+	}
+}
+
+.cangra-footer {
+	@include flex(default, default, column, 2.5rem);
+	position: relative;
+	background-color: $cangra-blue-800;
+	padding: 48px 0;
+
+	&__wrapper {
+		@include flex(flex-start, default, column, 2rem);
+		position: relative;
+		padding: 0 48px;
+	}
+
+	&__logo {
+		position: relative;
+		object-fit: cover;
+	}
+
+	&__desc {
+		color: rgba(204, 204, 204, 1);
+		font-size: 14px;
+	}
+
+	&__links {
+		@include flex;
+		position: relative;
+	}
+	&__col {
+		@include flex(default, default, column, 0.5rem);
+		position: relative;
+		margin-right: 4rem;
+	}
+
+	&__link {
+		color: rgba(204, 204, 204, 1);
+		font-size: 14px;
+		line-height: 25px;
+
+		&.title {
+			color: white;
+			font-size: 18px;
+			font-weight: 600;
+			line-height: 25px;
+		}
+	}
+
+	&__separator {
+		position: relative;
+		width: 100%;
+		height: 1px;
+		border-top: 1px solid rgba(204, 204, 204, 0.5);
+		content: ' ';
+	}
+}
