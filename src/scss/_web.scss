@@ -725,6 +725,10 @@
 				font-size: 2rem;
 				font-weight: 600;
 				line-height: 165%;
+
+				@include sm {
+					font-size: 1.75rem;
+				}
 			}
 		}
 	}
