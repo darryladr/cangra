@@ -2,14 +2,13 @@
 	"name": "cangra",
 	"version": "1.0.0",
 	"private": true,
-	"main": "index.js",
 	"dependencies": {
 		"jquery": "^3.6.0",
 		"jquery-ui": "^1.13.2"
 	},
 	"scripts": {
 		"dev": "rm -rf dev && rm -rf .parcel-cache && parcel src/index.html --dist-dir dev",
-		"build": "parcel build src/index.html --dist-dir dist --public-url src"
+		"build": "rm -rf dev && rm -rf .parcel-cache && parcel build src/index.html --dist-dir dist --public-url src"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.18.6",
