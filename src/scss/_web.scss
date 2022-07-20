@@ -2,9 +2,9 @@
 @use 'mixin' as *;
 @use 'breakpoints' as *;
 
-// .cangra-main {
-// 	position: relative;
-// }
+.cangra-main {
+	position: relative;
+}
 
 .cangra-nav {
 	@include flex(center, space-between);
@@ -56,6 +56,11 @@
 
 	.hamburger {
 		cursor: pointer;
+		display: none;
+
+		@include sm {
+			display: block;
+		}
 
 		> * {
 			width: 30px;

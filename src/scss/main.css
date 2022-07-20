@@ -16,6 +16,8 @@ body {
   line-height: 1.15;
   color: #000000;
   background-color: rgb(237, 241, 255);
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -44,6 +46,10 @@ img {
   display: block;
 }
 
+ul > li {
+  list-style: none;
+}
+
 .cangra-main {
   position: relative;
 }
@@ -58,11 +64,17 @@ img {
   padding: 16px 64px;
   z-index: 1;
 }
+@media only screen and (max-width: 767px) {
+  .cangra-nav {
+    padding: 16px 32px;
+  }
+}
 .cangra-nav .logo {
   position: relative;
   width: 110px;
   height: 47px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cangra-nav.scrolled {
   background-color: rgb(41, 64, 145);
@@ -74,13 +86,17 @@ img {
   justify-content: center;
   display: flex;
   gap: 1rem;
-  position: relative;
 }
-.cangra-nav__item {
+@media only screen and (max-width: 767px) {
+  .cangra-nav__items {
+    display: none;
+  }
+}
+.cangra-nav__items .item {
   color: white;
   font-size: 14px;
 }
-.cangra-nav__button {
+.cangra-nav__items .button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -93,6 +109,33 @@ img {
   font-weight: 500;
   padding: 10px 20px;
 }
+.cangra-nav .hamburger {
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-nav .hamburger {
+    display: block;
+  }
+}
+.cangra-nav .hamburger > * {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+  display: block;
+  margin: 6px 0;
+  transition: all 0.3s ease-in-out;
+}
+.cangra-nav .hamburger .line1.active {
+  transform: translateY(9px) rotate(45deg);
+}
+.cangra-nav .hamburger .line2.active {
+  opacity: 0;
+}
+.cangra-nav .hamburger .line3.active {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
 .cangra-hero {
   flex-direction: row;
@@ -100,13 +143,21 @@ img {
   justify-content: center;
   display: flex;
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background: linear-gradient(to top, rgb(73, 113, 255), cubic-bezier(0.65, 0, 1, 1), rgb(41, 64, 145));
+  background: linear-gradient(to top, rgb(73, 113, 255), cubic-bezier(0.6, 0, 1, 1), rgb(41, 64, 145));
+  padding: 0 4rem;
+  overflow: hidden;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-hero {
-    background: black;
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero {
+    padding: 0 2rem;
+    flex-direction: column;
   }
 }
 .cangra-hero__wrapper {
@@ -115,32 +166,57 @@ img {
   justify-content: center;
   display: flex;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero__wrapper {
+    align-items: center;
+    text-align: center;
+  }
 }
 .cangra-hero__wrapper .title {
-  width: 600px;
   color: white;
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 2.5rem;
   margin-bottom: 1rem;
+  max-width: 600px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-hero__wrapper .title {
-    width: 500px;
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
 }
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .cangra-hero__wrapper .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.cangra-hero__wrapper .title--sm {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero__wrapper .title--sm {
+    display: block;
+  }
+}
 .cangra-hero__wrapper .desc {
-  width: 540px;
-  height: auto;
   color: white;
   font-size: 1.25rem;
   line-height: 2.5rem;
   margin-bottom: 1rem;
+  max-width: 600px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-hero__wrapper .desc {
-    width: 490px;
     font-size: 1rem;
     line-height: 2rem;
   }
@@ -155,20 +231,58 @@ img {
   color: rgb(52, 80, 181);
   font-weight: 500;
   padding: 16px 32px;
+  z-index: 1;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-hero__wrapper .cta {
     font-size: 14px;
   }
 }
 .cangra-hero__img {
-  max-width: 100%;
   height: 370px;
-  object-fit: cover;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-hero__img {
-    height: 280px;
+    height: 320px;
+  }
+}
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .cangra-hero__img {
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero__img {
+    display: none;
+  }
+}
+.cangra-hero #cloud-left {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero #cloud-left {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    height: 120px;
+    left: -100;
+    bottom: 125;
+  }
+}
+.cangra-hero #cloud-right {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-hero #cloud-right {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    height: 120px;
+    right: -160;
+    bottom: 230;
   }
 }
 
@@ -179,8 +293,27 @@ img {
   display: flex;
   gap: 1rem;
   position: relative;
-  bottom: 130px;
-  width: 100%;
+  bottom: 120px;
+  margin: 0 1.5rem;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-boxes {
+    bottom: 90px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-boxes {
+    bottom: auto;
+    flex-direction: column;
+    margin: 4rem 0;
+  }
+}
+@media only screen and (max-height: 400px) and (orientation: landscape) {
+  .cangra-boxes {
+    bottom: 0;
+    margin: 2rem 1.5rem 4rem 1.5rem;
+  }
 }
 .cangra-boxes .cangra-box {
   flex-direction: column;
@@ -193,7 +326,7 @@ img {
   box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
   padding: 24px 16px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-boxes .cangra-box {
     padding: 20px 10px;
   }
@@ -208,10 +341,11 @@ img {
   margin-bottom: 1rem;
   overflow: hidden;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-boxes .cangra-box__icon {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.75rem;
   }
 }
 .cangra-boxes .cangra-box__icon-bg {
@@ -225,22 +359,39 @@ img {
   background-color: rgb(255, 251, 230);
   border-radius: 10px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .cangra-boxes .cangra-box__icon-bg {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-boxes .cangra-box__icon-bg img {
+    width: 40px;
+    height: 40px;
   }
 }
 .cangra-boxes .cangra-box__title {
   font-size: 16px;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-boxes .cangra-box__title {
+    margin-bottom: 0.75rem;
+  }
+}
 .cangra-boxes .cangra-box__desc {
-  width: 326px;
   color: rgb(68, 68, 68);
   font-size: 12px;
-  line-height: 30px;
+  line-height: 2rem;
+  max-width: 326px;
   text-align: center;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-boxes .cangra-box__desc {
+    line-height: 1.5rem;
+  }
 }
 
 .cangra-clients {
@@ -249,8 +400,8 @@ img {
   justify-content: center;
   display: flex;
   position: relative;
-  border-color: transparent;
-  margin: 2rem 0 7rem 0;
+  margin-bottom: 6rem;
+  max-width: 100%;
 }
 .cangra-clients__title {
   color: rgb(52, 80, 181);
@@ -258,14 +409,25 @@ img {
   font-weight: 700;
   margin-bottom: 40px;
 }
+@media only screen and (max-width: 767px) {
+  .cangra-clients__title {
+    width: 70%;
+    text-align: center;
+  }
+}
 .cangra-clients__cards {
-  flex-direction: "";
+  flex-direction: row;
   align-items: center;
-  justify-content: "";
+  justify-content: center;
   display: flex;
   gap: 1rem;
   position: relative;
-  box-sizing: border-box;
+  margin: 0 1.5rem;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-clients__cards {
+    flex-direction: column;
+  }
 }
 .cangra-clients__cards .card {
   flex-direction: column;
@@ -278,15 +440,26 @@ img {
   box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
   padding: 24px 16px;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card {
+    padding: 20px 10px;
+  }
+}
 .cangra-clients__cards .card img {
   position: relative;
   width: 64px;
   height: 64px;
-  border-color: transparent;
   border-radius: 100px;
-  box-sizing: border-box;
   margin-bottom: 1rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.75rem;
+  }
 }
 .cangra-clients__cards .card__profile {
   flex-direction: column;
@@ -294,24 +467,42 @@ img {
   justify-content: flex-start;
   display: flex;
   position: relative;
-  flex-shrink: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card__profile {
+    margin-bottom: 0.75rem;
+  }
 }
 .cangra-clients__cards .card__profile .name {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card__profile .name {
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+  }
+}
 .cangra-clients__cards .card__profile .company {
   font-size: 14px;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card__profile .company {
+    font-size: 12px;
+  }
+}
 .cangra-clients__cards .card__desc {
-  width: 326px;
   font-size: 12px;
-  font-stretch: normal;
   line-height: 2rem;
+  max-width: 326px;
   text-align: center;
-  text-decoration: none;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-clients__cards .card__desc {
+    line-height: 1.5rem;
+  }
 }
 
 .cangra-customers {
@@ -320,9 +511,8 @@ img {
   justify-content: center;
   display: flex;
   position: relative;
-  width: 100%;
-  height: 20rem;
   background-image: linear-gradient(135deg, rgb(73, 113, 255) 0%, rgb(65, 101, 229) 34%, rgb(56, 87, 198) 67%, rgb(41, 64, 145) 100%);
+  padding: 4rem 0;
 }
 .cangra-customers__title {
   color: white;
@@ -331,23 +521,31 @@ img {
   margin-bottom: 2rem;
 }
 .cangra-customers__wrapper {
-  flex-direction: "";
-  align-items: flex-start;
-  justify-content: "";
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   display: flex;
   gap: 2rem;
   position: relative;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-customers__wrapper {
+    flex: 1 1 auto;
+    margin: 0 1.5rem;
+  }
 }
 .cangra-customers__wrapper .company {
   flex-direction: row;
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 10rem;
   height: 7rem;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+  max-width: 10rem;
   padding: 12px 48px;
 }
 .cangra-customers__wrapper .company__wrapper {
@@ -385,7 +583,7 @@ img {
   justify-content: center;
   display: flex;
   width: 100%;
-  margin: 80px 0;
+  margin: 4rem 0;
 }
 .cangra-features__title {
   color: rgb(52, 80, 181);
@@ -393,28 +591,60 @@ img {
   font-weight: 700;
   margin-bottom: 40px;
 }
-.cangra-features img {
-  width: 965px;
+@media only screen and (max-width: 767px) {
+  .cangra-features__title {
+    width: 70%;
+    text-align: center;
+  }
+}
+.cangra-features .hero {
   height: 550px;
   border-radius: 20px;
   margin-bottom: 40px;
-  object-fit: cover;
+  max-width: 965px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-features .hero {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-features .hero {
+    height: 200px;
+    border-radius: 10px;
+  }
 }
 .cangra-features .cangra-feature {
   flex-direction: row;
   align-items: center;
   justify-content: center;
   display: flex;
+  gap: 4rem;
   position: relative;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-features .cangra-feature {
+    gap: 2rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-features .cangra-feature {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    display: flex;
+    gap: 1.5rem;
+  }
 }
 .cangra-features .cangra-feature .feature-col {
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   position: relative;
-  margin-right: 4rem;
 }
 .cangra-features .cangra-feature .feature-col .feature {
   flex-direction: row;
@@ -423,34 +653,56 @@ img {
   display: flex;
   position: relative;
 }
-.cangra-features .cangra-feature .feature-col .feature img {
+.cangra-features .cangra-feature .feature-col .feature .checkmark {
   position: relative;
   width: 32px;
   height: 32px;
-  border-color: transparent;
-  box-sizing: border-box;
-  margin: 0 10px 0 0;
-  object-fit: cover;
+  margin-right: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-features .cangra-feature .feature-col .feature .checkmark {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-features .cangra-feature .feature-col .feature .checkmark {
+    width: 20px;
+    height: 20px;
+  }
 }
 .cangra-features .cangra-feature .feature-col .feature-name {
   font-size: 1.5rem;
   font-weight: 600;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-features .cangra-feature .feature-col .feature-name {
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-features .cangra-feature .feature-col .feature-name {
+    font-size: 1rem;
+  }
+}
 
 .cangra-packages {
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   display: flex;
   position: relative;
-  width: 100%;
-  background-image: linear-gradient(0deg, rgb(73, 113, 255) 0%, rgb(65, 101, 229) 34%, rgb(56, 87, 198) 67%, rgb(41, 64, 145) 100%);
+  background-image: linear-gradient(180deg, rgb(73, 113, 255) 0%, rgb(65, 101, 229) 34%, rgb(56, 87, 198) 100%);
+  max-width: 100%;
 }
 .cangra-packages img {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cangra-packages__wrapper {
   flex-direction: row;
@@ -458,7 +710,19 @@ img {
   justify-content: center;
   display: flex;
   width: 100%;
-  padding: 4rem;
+  gap: 2rem;
+  padding: 3rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-packages__wrapper {
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-packages__wrapper {
+    flex-direction: column;
+  }
 }
 .cangra-packages__wrapper .header {
   flex-direction: column;
@@ -466,7 +730,16 @@ img {
   justify-content: flex-start;
   display: flex;
   position: relative;
-  margin-right: 5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-packages__wrapper .header {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-packages__wrapper .header {
+    text-align: center;
+  }
 }
 .cangra-packages__wrapper .header__title {
   color: white;
@@ -482,14 +755,20 @@ img {
 }
 .cangra-packages .card {
   flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   display: flex;
   position: relative;
   border: 1px solid rgb(52, 80, 181);
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px rgba(73, 113, 255, 0.1), 0px 4px 6px -4px rgba(73, 113, 255, 0.1);
+  flex-shrink: 0;
   overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-packages .card {
+    width: 90%;
+  }
 }
 .cangra-packages .card__header {
   flex-direction: column;
@@ -497,8 +776,9 @@ img {
   justify-content: center;
   display: flex;
   position: relative;
+  width: 100%;
   background-color: rgb(52, 80, 181);
-  padding: 24px 16px;
+  padding: 16px;
 }
 .cangra-packages .card__header .title {
   color: white;
@@ -514,7 +794,24 @@ img {
   gap: 0.5rem;
   position: relative;
 }
-.cangra-packages .card__header .buttons .button {
+@media only screen and (max-width: 767px) {
+  .cangra-packages .card__header .buttons {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: scroll;
+    width: 90%;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+  }
+  .cangra-packages .card__header .buttons::-webkit-scrollbar {
+    display: none;
+  }
+}
+.cangra-packages .card__header .buttons .package-button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -528,7 +825,7 @@ img {
   font-size: 14px;
   padding: 8px 16px;
 }
-.cangra-packages .card__header .buttons .button.active {
+.cangra-packages .card__header .buttons .package-button.active {
   background-color: white;
   color: rgb(52, 80, 181);
 }
@@ -537,12 +834,13 @@ img {
   align-items: center;
   justify-content: center;
   display: flex;
+  gap: 0.5rem;
   position: relative;
   width: 100%;
   background-color: white;
-  padding: 24px 16px;
+  padding: 16px;
 }
-.cangra-packages .card__desc__wrapper {
+.cangra-packages .card__desc .wrapper {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -550,19 +848,19 @@ img {
   gap: 0.5rem;
   position: relative;
   width: 100%;
-  margin-bottom: 1rem;
 }
-.cangra-packages .card__desc__text {
+.cangra-packages .card__desc .text {
   color: rgb(68, 68, 68);
   font-size: 1.25rem;
   line-height: 165%;
   text-align: center;
 }
-.cangra-packages .card .cangra-cangra-packages-card__desc__separator {
+.cangra-packages .card__desc .separator {
   width: 100%;
   height: 1px;
+  background-color: rgba(68, 68, 68, 0.1);
 }
-.cangra-packages .card__desc__price {
+.cangra-packages .card__desc .price {
   color: rgb(52, 80, 181);
   font-size: 2rem;
   font-weight: 600;
@@ -572,15 +870,38 @@ img {
 .cangra-start {
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
-  padding: 100px 320px;
+  gap: 3rem;
   color: rgb(52, 80, 181);
+  padding: 100px 0;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cangra-start {
+    padding: 4rem 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cangra-start {
+    width: 100%;
+    padding: 4rem 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+  }
 }
 .cangra-start__text {
   color: rgb(52, 80, 181);
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-start__text {
+    text-align: center;
+  }
 }
 .cangra-start__cta {
   flex-direction: row;
@@ -589,8 +910,9 @@ img {
   display: flex;
   position: relative;
   background-color: rgb(255, 215, 0);
-  font-size: 1.5rem;
   border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
   padding: 16px 32px;
 }
 
@@ -615,7 +937,8 @@ img {
 }
 .cangra-footer__logo {
   position: relative;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cangra-footer__desc {
   color: rgb(204, 204, 204);
@@ -626,7 +949,15 @@ img {
   align-items: stretch;
   justify-content: flex-start;
   display: flex;
+  gap: 2rem;
   position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .cangra-footer__links {
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    gap: 2rem;
+  }
 }
 .cangra-footer__col {
   flex-direction: column;
@@ -637,12 +968,12 @@ img {
   position: relative;
   margin-right: 4rem;
 }
-.cangra-footer__link {
+.cangra-footer__col .link {
   color: rgb(204, 204, 204);
   font-size: 14px;
   line-height: 25px;
 }
-.cangra-footer__link.title {
+.cangra-footer__col .link.title {
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -654,6 +985,4 @@ img {
   height: 1px;
   border-top: 1px solid rgba(204, 204, 204, 0.5);
   content: " ";
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
