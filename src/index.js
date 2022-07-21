@@ -13,6 +13,7 @@ $(function () {
 $(function () {
     $(".hamburger").on("click", function () {
         $(this).children().toggleClass("active")
+        $(".cangra-nav__items").toggleClass("open")
     })
 })
 
